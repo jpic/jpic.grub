@@ -1,0 +1,15 @@
+---
+
+- copy: 
+    src: 31_hold_shift
+    dest: /etc/grub.d/31_hold_shift
+    mode: a+x
+  sudo: yes
+  notify: grub config
+
+- lineinfile: 
+    dest: /etc/default/grub 
+    regexp: ^GRUB_FORCE_HIDDEN_MENU= 
+    line: GRUB_FORCE_HIDDEN_MENU="true"
+  sudo: yes
+  notify: grub config

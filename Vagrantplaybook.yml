@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  roles:
+  - role: jpic.pacman
+    pacman_mirrors:
+    - http://arch.yourlabs.org/
+    pacman_repositories:
+    - name: repo-ck
+      url: http://repo-ck.com/$arch
+  - jpic.gpg
+  - jpic.march
+  - jpic.ck
+  - role: .
+    grub_default: 3

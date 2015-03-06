@@ -1,0 +1,5 @@
+---
+
+- name: grub config
+  shell: grub-mkconfig -o /boot/grub/grub.cfg
+  sudo: yes

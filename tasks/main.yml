@@ -1,0 +1,5 @@
+---
+
+- include: 'shiftkey.yml'
+- include: 'menuentry.yml'
+- meta: flush_handlers

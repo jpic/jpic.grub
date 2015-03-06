@@ -1,0 +1,15 @@
+---
+
+- lineinfile: 
+    dest: /etc/default/grub 
+    regexp: ^GRUB_DISABLE_SUBMENU=
+    line: GRUB_DISABLE_SUBMENU=y
+  sudo: yes
+  notify: grub config
+
+- lineinfile: 
+    dest: /etc/default/grub 
+    regexp: ^GRUB_DEFAULT= 
+    line: GRUB_DEFAULT={{ grub_default }}
+  sudo: yes
+  notify: grub config
